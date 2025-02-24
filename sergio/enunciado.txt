@@ -1,0 +1,21 @@
+Opcion 2:
+Aplicacion web en la que existen peliculas y videojuegos.
+Existen fichas que pueden ser de una pelicula o de un videojuego. Una pelicula solo tiene una ficha.
+Existen usuarios que pueden realizar comentarios en una ficha. Tambien se pueden hacer comentarios en un comentario.
+Un usuario puede valorar una ficha.
+La ficha mostrará su valoracion media.
+También habrá rankings.
+Utilizar liveware en breeze.
+
+
+
+
+peliculas        videojuegos
+   1|                |1
+    |____1_fichas_1__|
+             |1
+             |
+             |*
+        comentarios-1---
+             |         |
+             |-*--------
