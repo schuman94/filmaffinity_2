@@ -3,14 +3,16 @@
 namespace App\Livewire;
 
 use App\Models\Pelicula;
+use App\Models\Ficha;
 use Livewire\Component;
 
 class PeliculaIndex extends Component
 {
-    public $peliculaid;
     public $titulo;
     public $director;
     public $fecha_estreno;
+    public $peliculaid;
+    public $estaEditando = false;
 
     public function crear()
     {
@@ -19,7 +21,8 @@ class PeliculaIndex extends Component
         );
 
         $ficha = new Ficha();
-        $ficha->pelicula()->associate($pelicula);
+        $ficha->fichable()->associate($pelicula);
+        $ficha->save();
     }
 
     public function editar($peliculaid)
@@ -44,6 +47,11 @@ class PeliculaIndex extends Component
         $this->reset();
     }
 
+    public function cancelar()
+    {
+        $this->reset();
+        // $this->estaEditando = false;
+    }
 
     public function eliminar($peliculaid)
     {
